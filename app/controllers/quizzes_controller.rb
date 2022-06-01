@@ -17,10 +17,6 @@ class QuizzesController < ApplicationController
     @quiz = Quiz.new
   end
 
-  # GET /quizzes/1/edit
-  def edit
-  end
-
   # POST /quizzes or /quizzes.json
   def create
     @quiz = Quiz.new(quiz_params)
