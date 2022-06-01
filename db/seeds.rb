@@ -7,7 +7,7 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 u1 = User.create!(name: 'Joe Bloggs', email: 'joebloggs@gmail.com', password: 'password', admin: true)
-u2 = User.create!(name: 'Jane Doe', email: 'janedie@gmail.com', password: 'password', admin: true)
+u2 = User.create!(name: 'Jane Doe', email: 'janedoe@gmail.com', password: 'password')
 
 q1 = Quiz.create(name: 'Health Care', user_id: u1.id)
 q2 = Quiz.create(name: 'Sports', user_id: u1.id)

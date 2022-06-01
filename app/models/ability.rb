@@ -13,6 +13,5 @@ class Ability
       can :read, :all
       can :manage, Answer, user: user
     end
-    
   end
 end

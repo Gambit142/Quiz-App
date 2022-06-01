@@ -10,6 +10,7 @@ class QuizzesController < ApplicationController
 
   # GET /quizzes/1 or /quizzes/1.json
   def show
+    @quiz = set_quiz
   end
 
   # GET /quizzes/new
@@ -20,14 +21,13 @@ class QuizzesController < ApplicationController
   # POST /quizzes or /quizzes.json
   def create
     @quiz = Quiz.new(quiz_params)
+    @quiz.user_id = current_user.id
 
     respond_to do |format|
       if @quiz.save
-        format.html { redirect_to quiz_url(@quiz), notice: "Quiz was successfully created." }
-        format.json { render :show, status: :created, location: @quiz }
+        format.html { redirect_to quizzes_url, notice: "Quiz was successfully created." }
       else
         format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @quiz.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -36,11 +36,9 @@ class QuizzesController < ApplicationController
   def update
     respond_to do |format|
       if @quiz.update(quiz_params)
-        format.html { redirect_to quiz_url(@quiz), notice: "Quiz was successfully updated." }
-        format.json { render :show, status: :ok, location: @quiz }
+        format.html { redirect_to quizzes_url, notice: "Quiz was successfully updated." }
       else
         format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @quiz.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -63,6 +61,6 @@ class QuizzesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def quiz_params
-      params.require(:quiz).permit(:name, :user_id)
+      params.require(:quiz).permit(:name)
     end
 end
