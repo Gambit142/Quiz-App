@@ -2,8 +2,19 @@
 
 <div>
   <% @quiz.questions.each do |question| %>
+
+    <% if current_user.answer_for(question) %>
+      <p>
+        <%= question.title %>
+      </p>
+    <% else %>
+      <p>
+        <%= link_to question.title, quiz_question_path(@quiz.id, question.id) %>
+      </p>
+    <% end %>
+
     <p>
-      <%= link_to question.title, quiz_question_path(@quiz.id, question.id) %>
+      <%= current_user.answer_for(question) %>
     </p>
 
     <small>Created <%= time_ago_in_words(question.created_at)%> ago</small>

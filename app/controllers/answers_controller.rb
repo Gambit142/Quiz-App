@@ -13,25 +13,29 @@ class AnswersController < ApplicationController
   end
 
   # GET /answers/new
-  def new
-    @answer = Answer.new
-  end
+  # def new
+  #   @answer = Answer.new
+  # end
 
   # GET /answers/1/edit
   def edit
   end
 
-  # POST /answers or /answers.json
+  # POST /answers or /answers.json 
   def create
     @answer = Answer.new(answer_params)
+    @question = Question.find(params[:question_id])
+    @quiz = Quiz.find(params[:quiz_id])
+
+    @answer.quiz_id = @quiz.id
+    @answer.question_id = @question.id
+    @answer.user_id = current_user.id
 
     respond_to do |format|
       if @answer.save
-        format.html { redirect_to answer_url(@answer), notice: "Answer was successfully created." }
-        format.json { render :show, status: :created, location: @answer }
+        format.html { redirect_to quiz_url(@quiz), notice: "Answer was successfully created." }
       else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @answer.errors, status: :unprocessable_entity }
+        format.html { redirect_to quiz_question_url(@quiz, @question), status: :unprocessable_entity, notice: "Could not submit answer" }
       end
     end
   end
@@ -67,6 +71,6 @@ class AnswersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def answer_params
-      params.require(:answer).permit(:response, :user_id, :quiz_id, :question_id)
+      params.require(:answer).permit(:response)
     end
 end

@@ -1,6 +1,17 @@
-<p style="color: green"><%= notice %></p>
-
 <%= render @question %>
+
+<%= form_with model: @answer, url: quiz_question_answers_url(@question.quiz.id, @question.id), method: :post do |form| %>
+
+  <div>
+    <%= form.label :response, style: "display: block" %>
+    <%= form.text_field :response %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
+
 
 <div>
   <%= link_to "Edit this question", edit_quiz_question_path(@question.quiz.id, @question.id) %>
