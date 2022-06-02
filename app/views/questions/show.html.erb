@@ -3,8 +3,9 @@
 <%= render @question %>
 
 <div>
-  <%= link_to "Edit this question", edit_question_path(@question) %> |
-  <%= link_to "Back to questions", questions_path %>
+  <%= link_to "Edit this question", edit_quiz_question_path(@question.quiz.id, @question.id) %>
+  <%= link_to "Back to question", quiz_path(@question.quiz.id) %>
+  <%= link_to "Answer", new_quiz_question_answer_path(@question.quiz.id, @question.id) %>
 
-  <%= button_to "Destroy this question", @question, method: :delete %>
+  <%= button_to "Destroy this question", quiz_question_path(@question.quiz.id, @question.id), method: :delete %>
 </div>

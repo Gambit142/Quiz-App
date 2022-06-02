@@ -10,7 +10,7 @@ class QuizzesController < ApplicationController
 
   # GET /quizzes/1 or /quizzes/1.json
   def show
-    @quiz = set_quiz
+    set_quiz
   end
 
   # GET /quizzes/new

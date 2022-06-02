@@ -3,7 +3,7 @@
 <div>
   <% @quiz.questions.each do |question| %>
     <p>
-      <%= link_to question.title, quiz_question_path(@quiz.id) %>
+      <%= link_to question.title, quiz_question_path(@quiz.id, question.id) %>
     </p>
 
     <small>Created <%= time_ago_in_words(question.created_at)%> ago</small>
@@ -15,6 +15,7 @@
 <% if can? :manage, @quiz %>
   <div>
     <%= link_to "Edit this quiz", edit_quiz_path(@quiz) %>
+    <%= link_to "Create a question", new_quiz_question_path(@quiz) %>
     <%= button_to "Destroy this quiz", @quiz, method: :delete %>
   </div>
 <% end %>
