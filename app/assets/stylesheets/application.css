@@ -29,7 +29,7 @@ body {
   background-attachment: fixed;
 }
 
-.signup-container {
+.devise-container {
   display: var(--flex);
   flex-direction: var(--column);
   justify-content: center;
@@ -38,7 +38,7 @@ body {
   height: 100vh;
 }
 
-.signup-container h1 {
+.devise-container h1 {
   font-size: 3.3rem;
   color: var(--white);
   font-family: monospace;
@@ -100,9 +100,23 @@ body {
   color: #2c0440;
 }
 
-.back {
+.links-div {
+  display: var(--flex);
+  flex-direction: var(--column);
+  align-items: center;
+}
+
+.links {
   color: var(--white);
   font-family: var(--monospace);
   text-decoration: none;
   font-size: 1.2rem;
+}
+
+.remember {
+  flex-direction: row;
+}
+
+.field .check {
+  width: 100%;
 }
