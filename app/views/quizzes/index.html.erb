@@ -1,15 +1,14 @@
-<main class="quiz-container">
+<main class="quiz-container display">
   <h1>Quizzes</h1>
 
-  <div id="quizzes">
+  <div class="quizzes-div display">
     <% @quizzes.each do |quiz| %>
       <%= render quiz %>
       <p>
-        <%= link_to "Show this quiz", quiz_path(quiz.id) %>
+        <%= link_to "Show this quiz", quiz_path(quiz.id), class: 'quiz-link' %>
       </p>
     <% end %>
   </div>
 
-
-  <%= link_to "New quiz", new_quiz_path if can? :create, Quiz %>
+  <%= link_to "New quiz", new_quiz_path, class: 'new-quiz' if can? :create, Quiz %>
 </main>
