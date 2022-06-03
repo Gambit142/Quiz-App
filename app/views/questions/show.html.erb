@@ -1,22 +1,27 @@
-<%= render @question %>
+<main class="quiz-container display">
+  <%= render @question %>
 
-<%= form_with model: @answer, url: quiz_question_answers_url(@question.quiz.id, @question.id), method: :post do |form| %>
+  <%= form_with model: @answer, url: quiz_question_answers_url(@question.quiz.id, @question.id), method: :post do |form| %>
 
-  <div>
-    <%= form.label :response, style: "display: block" %>
-    <%= form.text_field :response %>
+    <div class="field">
+      <%= form.label :response, style: "display: block" %>
+      <%= form.text_field :response %>
+    </div>
+
+    <div class="submit-btn-div display">
+      <%= form.submit %>
+    </div>
+  <% end %>
+
+
+  <div class="display">
+    <%= link_to "Back to question", quiz_path(@question.quiz.id), class: 'new-quiz' %>
+
+    <% if can? :manage, @quiz %>
+      <div class="display">
+        <%= link_to "Edit this question", edit_quiz_question_path(@question.quiz.id, @question.id), class: 'new-quiz' %>
+        <%= button_to "Destroy this question", quiz_question_path(@question.quiz.id, @question.id), method: :delete, form_class: "delete-btn" %>
+      </div>
+    <% end %>
   </div>
-
-  <div>
-    <%= form.submit %>
-  </div>
-<% end %>
-
-
-<div>
-  <%= link_to "Edit this question", edit_quiz_question_path(@question.quiz.id, @question.id) %>
-  <%= link_to "Back to question", quiz_path(@question.quiz.id) %>
-  <%= link_to "Answer", new_quiz_question_answer_path(@question.quiz.id, @question.id) %>
-
-  <%= button_to "Destroy this question", quiz_question_path(@question.quiz.id, @question.id), method: :delete %>
-</div>
+</main>

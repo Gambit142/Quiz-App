@@ -11,7 +11,7 @@ class Ability
       can :manage, :all
     else
       can :read, :all
-      can :manage, Answer, user: user
+      can :create, Answer, user: user
     end
   end
 end
