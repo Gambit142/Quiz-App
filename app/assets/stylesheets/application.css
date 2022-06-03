@@ -12,10 +12,97 @@
   padding: 0;
 }
 
+:root {
+  --white: #ffffff;
+  --light-purple: #d0b5de;
+  --kdam: 'Kdam Thmor Pro', sans-serif;
+  --flex: flex;
+  --column: column;
+  --monospace: monospace;
+}
+
 body {
   background-image: url('application_background');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
+}
+
+.signup-container {
+  display: var(--flex);
+  flex-direction: var(--column);
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  height: 100vh;
+}
+
+.signup-container h1 {
+  font-size: 3.3rem;
+  color: var(--white);
+  font-family: monospace;
+}
+
+.new_user {
+  display: var(--flex);
+  flex-direction: var(--column);
+  gap: 1.2rem;
+  align-items: center;
+}
+
+.field {
+  display: var(--flex);
+  flex-direction: var(--column);
+}
+
+.field label {
+  color: var(--light-purple);
+  font-family: var(--monospace);
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.field input {
+  width: 15.625rem;
+  padding: 0.5rem;
+  background: transparent;
+  font-family: var(--kdam);
+  font-size: 1.3rem;
+  color: var(--white);
+  font-weight: 800;
+  border: none;
+  border-bottom: 2px solid var(--white);
+  outline: none;
+}
+
+.field em {
+  color: var(--light-purple);
+  font-family: monospace;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.submit-btn {
+  background-color: #2c0440;
+  color: white;
+  font-family: 'Open Sans', sans-serif;
+  padding: 1rem 1.2rem;
+  border: none;
+  font-family: var(--monospace);
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.submit-btn:hover {
+  background-color: white;
+  color: #2c0440;
+}
+
+.back {
+  color: var(--white);
+  font-family: var(--monospace);
+  text-decoration: none;
+  font-size: 1.2rem;
 }
