@@ -1,22 +1,60 @@
+$dark-brown: #381e02;
+
 .form-container {
-  position: relative;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background: url(/app/assets/images/home_background.jpg) no-repeat;
+  background-image: url('home_background.png');
+  background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
+
+  .home-title {
+    font-size: 2.5rem;
+    font-family: 'Kdam Thmor Pro', sans-serif;
+    text-align: center;
+    color: $dark-brown;
+    text-transform: uppercase;
+    padding-top: 2.5rem;
+  }
+
+  .home-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    height: 100vh;
+
+    .username {
+      font-family: 'Kdam Thmor Pro', sans-serif;
+      color: $dark-brown;
+      font-size: 1.8rem;
+    }
+    
+    .home-btn {
+      background-color: $dark-brown;
+      color: white;
+      font-family: 'Open Sans', sans-serif;
+      padding: 1rem 1.2rem;
+      border: none;
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+
+    .home-btn:hover {
+      background-color: white;
+      color: $dark-brown;
+    }
+
+    .buttons-div {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+
+      .devise-btn {
+        width: 200px;
+      }
+    }
+  }
 }
 
-.form-container::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background-color: rgba(19, 137, 233, 0.55);
-}
+
