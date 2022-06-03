@@ -61,3 +61,47 @@
   background-color: var(--white);
   color: var(--dark-purple);
 }
+
+.question-title {
+  font-family: var(--kdam);
+  font-size: 1.3rem;
+  font-weight: 800;
+  text-align: center;
+  padding: 1rem;
+  color: var(--white);
+}
+
+.question-answer, .link-answer {
+  font-family: var(--monospace);
+  font-size: 1.5rem;
+  font-weight: 800;
+  text-align: center;
+  padding: 1rem;
+  color: var(--light-purple);
+}
+
+.link-answer a {
+  color: var(--white);
+}
+
+.created {
+  color: var(--white);
+  font-family: var(--monospace);
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.delete-btn {
+  margin-top: 1.5rem;
+  background-color: #4a0409;
+  padding: 1rem 1.2rem;
+}
+
+.delete-btn button {
+  background-color: transparent;
+  border: none;
+  color: var(--white);
+  font-family: var(--monospace);
+  font-size: 1.5rem;
+  font-weight: 600;
+}

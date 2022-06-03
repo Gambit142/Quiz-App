@@ -120,3 +120,10 @@ body {
 .field .check {
   width: 100%;
 }
+
+.notice, .success, .alert {
+  color: var(--white);
+  font-family: var(--monospace);
+  font-size: 1.2rem;
+  margin-left: 0.5rem;
+}
