@@ -98,6 +98,6 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- Hat tip to Nikolas Pontikos an Ismail Moghul for the guidance and constant communication.
+- Hat tip to Nikolas Pontikos and Ismail Moghul for the guidance and constant communication.
 
 
