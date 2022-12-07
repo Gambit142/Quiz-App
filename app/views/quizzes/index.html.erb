@@ -11,4 +11,5 @@
   </div>
 
   <%= link_to "New quiz", new_quiz_path, class: 'new-quiz' if can? :create, Quiz %>
+  <%= render partial: "shared/sign_out" %>
 </main>
